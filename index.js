@@ -169,7 +169,7 @@ console.log(emailAdapter);
 
 var enableAnonymousUsers = !!+(process.env.ENABLE_ANON_USERS);
 var allowClientClassCreation = !!+(process.env.ALLOW_CLIENT_CLASS_CREATION);
-var liveQueryClassNames = process.env.LIVE_QUERY_CLASS_NAMES.split(',')?process.env.LIVE_QUERY_CLASS_NAMES:[]; //env var is a comma-separated string, ex : "MyTestClass,GameScore"
+var liveQueryClassNames = process.env.LIVE_QUERY_CLASS_NAMES?process.env.LIVE_QUERY_CLASS_NAMES.split(','):[]; //env var is a comma-separated string, ex : "MyTestClass,GameScore"
 
 var api = new ParseServer({
   databaseURI: databaseUri || 'mongodb://localhost:27017/dev',
