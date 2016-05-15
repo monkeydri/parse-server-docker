@@ -85,4 +85,4 @@ parse-server:
 * https://github.com/yongjhih/parse-cloud-code
 * https://hub.docker.com/r/yongjhih/parse-cloud-code/
 * https://medium.com/cowbear-coder/migration-of-parse-server-with-docker-part1-87034cc29978
-* https://github.com/monkeydri/parse-dashboard-dashboard
+* https://github.com/monkeydri/parse-dashboard-docker
