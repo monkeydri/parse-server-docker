@@ -169,6 +169,7 @@ console.log(emailAdapter);
 
 var enableAnonymousUsers = !!+(process.env.ENABLE_ANON_USERS);
 var allowClientClassCreation = !!+(process.env.ALLOW_CLIENT_CLASS_CREATION);
+var liveQueryClassNames = process.env.LIVE_QUERY_CLASS_NAMES.split(',')?process.env.LIVE_QUERY_CLASS_NAMES:[]; //env var is a comma-separated string, ex : "MyTestClass,GameScore"
 
 var api = new ParseServer({
   databaseURI: databaseUri || 'mongodb://localhost:27017/dev',
@@ -196,13 +197,14 @@ var api = new ParseServer({
   allowClientClassCreation: allowClientClassCreation,
   //oauth = {},
   appName: process.env.APP_NAME,
-  publicServerURL: process.env.PUBLIC_SERVER_URL
+  publicServerURL: process.env.PUBLIC_SERVER_URL,
   //customPages: process.env.CUSTOM_PAGES || // {
     //invalidLink: undefined,
     //verifyEmailSuccess: undefined,
     //choosePassword: undefined,
     //passwordResetSuccess: undefined
   //}
+  liveQuery: { classNames: liveQueryClassNames } 
 });
 
 //console.log("appId: " + api.appId);
